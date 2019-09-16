@@ -1,0 +1,14 @@
+Carlos;Tevez;1
+Juan;Perez;2
+Marcelo;Polino;3
+Anibal;Pachano;4
+Uriel;Septim;5
+
+
+Silvana;Correvientos;6
+Martin;Tetaz;7
+Vladimir;Putin;8
+
+
+
+
