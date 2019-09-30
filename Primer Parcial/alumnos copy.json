@@ -1,0 +1,26 @@
+[
+    {
+        "nombre": "Federico",
+        "apellido": "Andrade",
+        "email": "fedepcs@gmail.com",
+        "foto": ""
+    },
+    {
+        "nombre": "Federico",
+        "apellido": "Andrade",
+        "email": "fedepcs2@gmail.com",
+        "foto": ""
+    },
+    {
+        "nombre": "Bautista",
+        "apellido": "Maciel",
+        "email": "bautista@gmail.com",
+        "foto": ""
+    },
+    {
+        "nombre": "Lautaro",
+        "apellido": "Maciel",
+        "email": "lautaro@gmail.com",
+        "foto": ""
+    }
+]
