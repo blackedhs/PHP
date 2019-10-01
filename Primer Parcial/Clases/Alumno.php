@@ -74,3 +74,31 @@ function AlumnoValido($alum, &$Error)
     else
         return false;
 }
+function AlumnoBuscar($email, $path, &$alumno)
+{
+    $lectura = Leer($path, $arraylectura);
+    if ($lectura) {
+        for ($i = 0; $i < count($arraylectura); $i++) {
+            if ($email == $arraylectura[$i]["email"]){
+                $alumno=new Alumno($arraylectura[$i]["nombre"],$arraylectura[$i]["apellido"],
+                $arraylectura[$i]["email"] ,$arraylectura[$i]["foto"]);
+                return true;
+            }
+        }
+    }
+    return false;
+}
+function AlumnoModificar($alumno,$path)
+{
+    $lectura = Leer($path, $arraylectura);
+    if ($lectura) {
+        for ($i = 0; $i < count($arraylectura); $i++) {
+            if ($alumno->email == $arraylectura[$i]["email"]){
+                $arraylectura[$i]=$alumno;
+                Modificar($arraylectura,$path);
+                return true;
+            }
+        }
+    }
+    return false;
+}

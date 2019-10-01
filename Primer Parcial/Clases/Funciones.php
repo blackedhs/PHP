@@ -27,7 +27,12 @@ function Guardar($dato, $path)
 function Baja($dato, $path)
 { }
 function Modificar($dato, $path)
-{ }
+{ 
+    $aux=json_encode($dato,true);
+    $archivo = fopen($path, 'w');
+    fwrite($archivo, $aux);
+    fclose($archivo);
+}
 function tratarImagen(&$pathimagen)
 {
     $extencionTmp = explode("/", $_FILES["foto"]["type"]);
@@ -37,5 +42,20 @@ function tratarImagen(&$pathimagen)
     }
     $archivoTmp = $_FILES["foto"]["tmp_name"];
     $pathimagen = "./imagenes/" . $_POST["email"] . "." . $extencionTmp[1];
+    return move_uploaded_file($archivoTmp, $pathimagen);
+}
+function BackupImagen(&$pathimagen,$alum)
+{
+    $extencionTmp = explode("/", $_FILES["foto"]["type"]);
+    
+    if ($extencionTmp[0] != "image") {
+        $pathimagen = '';
+        return false;
+    }
+    $archivoTmp = $_FILES["foto"]["tmp_name"];
+    $pathimagen = "./imagenes/" . $_POST["email"] . "." . $extencionTmp[1];
+    $date=date_default_timezone_get();
+    $backupName = './Backup/'.$alum->email.$date. "." . $extencionTmp[1];
+    rename($alum->foto,$backupName);
     return move_uploaded_file($archivoTmp, $pathimagen);
 }

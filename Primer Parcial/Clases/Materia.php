@@ -16,8 +16,23 @@ class Materia
 }
 function AltaMateria($materia, $path, &$ErrorAlta)
 {
-    if (Guardar($materia, $path))
+    if (MateriaNoExiste($materia,$path)){
+        Guardar($materia, $path);
         return true;
-    else
+    }
+    else{
+        $ErrorAlta='La Materia ya se encuentra en la base';
         return false;
+    }
+}
+function MateriaNoExiste($materia, $path)
+{
+    $lectura = Leer($path, $arraylectura);
+    if ($lectura) {
+        for ($i = 0; $i < count($arraylectura); $i++) {
+            if ($materia->codigo == $arraylectura[$i]["codigo"])
+                return false;
+        }
+    }
+    return true;
 }

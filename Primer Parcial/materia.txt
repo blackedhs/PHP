@@ -1,0 +1,14 @@
+[
+    {
+        "nombre": "Matematica",
+        "codigo": "1234567",
+        "cupo": "10",
+        "aula": "34"
+    },
+    {
+        "nombre": "Ingles",
+        "codigo": "234567",
+        "cupo": "10",
+        "aula": "34"
+    }
+]
